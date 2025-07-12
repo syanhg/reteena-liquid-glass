@@ -1,0 +1,183 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #3fd7ff 0%, #faf5ff 100%);
+  overflow-x: hidden;
+}
+
+.liquid-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse 150vw 100vh at left top, #caf0ff77 0%, transparent 60%),
+    radial-gradient(circle at 80vw 90vh, #82eefd55 40vw, transparent 80%),
+    linear-gradient(135deg, #eaf6fb 0%, #d1eafc 100%),
+    #faffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.fluid-glass-card {
+  box-shadow: 0 8px 40px 0 #4ec0ff60, 0 1.5px 16px 0 #ffffffaa;
+  border-radius: 36px;
+  background: rgba(255,255,255,0.37);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 2px solid #a3daff22;
+  max-width: 480px;
+  width: 95vw;
+  padding: 42px 30px 30px 30px;
+  margin: 80px auto 32px auto;
+  position: relative;
+  z-index: 2;
+}
+
+h1, h2 {
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #0d3c64cc;
+  margin-bottom: 0.3em;
+  background: linear-gradient(90deg, #0ad3ff, #5d6cff, #300ec999);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fluid-glass-card p, .fluid-glass-card li, .glass-input, .team-section li, .footer {
+  color: #123e5270;
+  font-size: 1.07rem;
+}
+
+.milestones b {
+  color: #29a89d;
+  font-weight: 700;
+}
+
+.liquid-form {
+  margin: 18px 0 28px 0;
+  display: flex;
+  gap: 0.7em;
+  background: none;
+}
+
+.glass-input {
+  border: none;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.7);
+  padding: 13px 19px;
+  box-shadow: 0 4px 18px 0 #7decff30;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s;
+  width: 58%;
+}
+.glass-input:focus {
+  box-shadow: 0 4px 24px 0 #4ce0ffe5;
+  background: #e5fcff;
+}
+
+.send-btn {
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #61dafb 0%, #6c48ff 100%);
+  box-shadow: 0 1.5px 10px 0 #9dcfff30;
+  color: white;
+  font-size: 1.25rem;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+  margin-left: 3px;
+  filter: blur(0px);
+  backdrop-filter: blur(6px) saturate(200%);  
+}
+.send-btn:hover {
+  transform: scale(1.12) rotate(-5deg);
+  background: linear-gradient(135deg, #1cc3ff 30%, #a16cff 90%);
+  box-shadow: 0 6px 24px 0 #14b3eb52;
+}
+
+.team-section {
+  margin: 36px 0 22px 0;
+  border-radius: 18px;
+  background: rgba(239,255,253,0.61);
+  border: 1.5px solid #7edefc22;
+  backdrop-filter: blur(7px) saturate(150%);
+  padding: 16px 14px 12px 16px;
+  box-shadow: 0 3.5px 16px 0 #bbf5ff33;
+}
+.team-section h2 {
+  margin-bottom: 0.73em;
+  background: linear-gradient(90deg, #0ad3ff, #5d6cff, #300ec999);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.team-section ul {
+  list-style: none;
+  padding: 0;
+}
+.team-section li {
+  margin-bottom: 8px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+.team-section .team-name {
+  font-weight: 600;
+  color: #168dda;
+}
+.team-section .team-school {
+  font-size: 0.94em;
+  opacity: 0.73;
+}
+
+.footer {
+  margin-top: 22px;
+  font-size: 0.98em;
+  color: #174b6b99;
+  text-align: center;
+  line-height: 1.6;
+  border-top: 1px solid #c9f0fb30;
+  padding-top: 16px;
+  user-select: none;
+  letter-spacing: .02em;
+  backdrop-filter: blur(5px);
+}
+
+/* Water drop/floating blob animation for extra cool UI */
+.liquid-bg::before,
+.liquid-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 46% 57% 55% 45%/34% 52% 48% 66%;
+  background: linear-gradient(135deg, #a5edfecc 20%, #9afbffc2 100%);
+  opacity: 0.45;
+  filter: blur(19px);
+  z-index: 1;
+  animation: floatBlob 10s ease-in-out infinite alternate;
+}
+.liquid-bg::before {
+  width: 580px;
+  height: 330px;
+  top: 8vh;
+  left: -180px;
+  animation-delay: 0s;
+}
+.liquid-bg::after {
+  width: 310px;
+  height: 220px;
+  bottom: 8vh;
+  right: -80px;
+  animation-delay: 2.8s;
+}
+@keyframes floatBlob {
+  0% { transform: scale(1.03) translateY(0); }
+  100% { transform: scale(0.92) translateY(35px); }
+}
